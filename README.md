@@ -8,5 +8,5 @@ them into relatively few files.
 ## 2. Serve the `dist` folder
 You need to serve the files in the `dist` folder from your server. 
 
-### Serving from Node - ([Starter Project]())
-### Serving from Java Play ([Starter Project]())
+### Serving from `Node` - ([Starter]())
+### Serving from `Java Play` ([Starter]())
