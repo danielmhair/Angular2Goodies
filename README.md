@@ -8,7 +8,7 @@ them into relatively few files.
 ## 2. Serve the `dist` folder
 You need to serve the files in the `dist` folder from your server. 
 
-### Serving from `Node` - ([Starter](https://github.com/danielmhair/Angular2Goodies/blob/master/NodeJS/))
+### Serving from `Node` - ([Starter](https://github.com/danielmhair/Angular2Goodies/tree/node))
 
-### Serving from `Java Play` ([Starter](https://github.com/danielmhair/Angular2Goodies/blob/master/JavaPlay))
+### Serving from `Java Play` ([Starter](https://github.com/danielmhair/Angular2Goodies/tree/javaplay))
 
