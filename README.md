@@ -13,7 +13,10 @@ A template to serve files from Node (and integration with Mongo, if
 desired) is at the link here ([Node Typescript Template](https://github.com/danielmhair/node-typescript-template.git))
 
 ### Serving from `Java Play`
-In order to serve files from Java Play, so here: 
+In order to serve files from Java Play, go
+[here](https://www.playframework.com/documentation/2.0/Assets) and read
+the `/public folder` heading. Instead of the public folder, you will
+be using the `dist` folder in replace of the `public` folder.
 
 #### The Assets controller
 
