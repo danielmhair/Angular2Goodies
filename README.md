@@ -12,6 +12,11 @@ You need to serve the files in the `dist` folder from your server.
 A template to serve files from Node (and integration with Mongo, if
 desired) is at the link here ([Node Typescript Template](https://github.com/danielmhair/node-typescript-template.git))
 
+Here, you can use `git clone https://github.com/danielmhair/node-typescript-template.git server`
+to make a server folder in your project directory. Follow the [instructions](https://github.com/danielmhair/node-typescript-template)
+to know how to setup your NodeJS server.
+
+
 ### b. Serving from `Java Play`
 In order to serve files from Java Play, go
 [here](https://www.playframework.com/documentation/2.0/Assets) and read
