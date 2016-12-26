@@ -8,11 +8,11 @@ them into relatively few files.
 ## 2. Serve the `dist` folder using your server
 You need to serve the files in the `dist` folder from your server. 
 
-### Serving from `Node` - ([Node Typescript Template](https://github.com/danielmhair/node-typescript-template.git))
+### a. Serving from `Node` - ([Node Typescript Template](https://github.com/danielmhair/node-typescript-template.git))
 A template to serve files from Node (and integration with Mongo, if
 desired) is at the link here ([Node Typescript Template](https://github.com/danielmhair/node-typescript-template.git))
 
-### Serving from `Java Play`
+### b. Serving from `Java Play`
 In order to serve files from Java Play, go
 [here](https://www.playframework.com/documentation/2.0/Assets) and read
 the `/public folder` heading. Instead of the public folder, you will
@@ -46,7 +46,7 @@ controllers.Assets.at("../dist", "index.html")
 
 This action will look-up the file and serve it, if it exists.
 
-The folder structure would be as follows
+## 3. Folder structure would be as follows
 ```
 src                                             # Angular Files used to develop the app
 dist                                            # Files that `ng build` creates for your Angular App
