@@ -1,13 +1,5 @@
-# Angular 2 Goodies
+# Angular 2 Template and Goodies
 I created this page for those who want to learn more about Angular 2.
-
-## [Angular 2 for Production](angular2Production.md)
-
-### [External Link on Angular 2 in Production](http://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/)
-
-## [NodeJS + Typescript Template](https://github.com/danielmhair/node-typescript-template)
-
-## [Jasmine Testing in Angular 2](angular2Testing.md)
 
 ## Angular 2 Template
 As you know, the setup of a project can take quite a while. For this reason, I have made a template that sets up pretty
@@ -18,20 +10,18 @@ git clone https://github.com/danielmhair/Angular2Goodies my-new-app
 ```
 The parameter `my-new-app` will put the contents of the template into that folder.
 
-### Steps to create the [Angular 2 Template](template) (or just clone it if you already understand it)
-
-#### Create the App via `Angular CLI`
+### Create the App via `Angular CLI`
 ```batch
 npm install angular-cli
 ng new my-app-name
 cd my-app-name
 ```
-#### Install all dependencies via `npm`
+### Install all dependencies via `npm`
 ```batch
 npm install
 ```
 
-#### Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies (hammerjs)
+### Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies (hammerjs)
 Note: this information comes from the link above (material.angular.io), but it really helped me, so I am simply
 reiterating what they are saying.
 
@@ -41,7 +31,7 @@ npm install --save hammerjs
 npm install --save-dev @types/hammerjs
 ```
 
-#### Import the NgModule for Material 2 into your `app.module.ts` file
+### Import the NgModule for Material 2 into your `app.module.ts` file
 ```typescript
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material';
@@ -57,7 +47,8 @@ import { MaterialModule } from '@angular/material';
 })
 export class AppModule { }
 ```
-#### Include the [core and theme styles](https://material.angular.io/guide/theming)
+
+### Include the [core and theme styles](https://material.angular.io/guide/theming)
 If you used `Angular CLI`, you will have a `style.css` file. Locate it and edit it.
 
 This is where I got hung up for a day or so. The styles of Material 2 was not working. It was because I missed adding
@@ -69,7 +60,7 @@ a theme to Material 2. You have three choices:
 
 I like #2 the best. But you can test them by adding one of them to your `style.css` like so:
 
-**style.css**
+**`styles.css`**
 ```css
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 /* ... All other styles for your core app ... */
@@ -77,7 +68,7 @@ I like #2 the best. But you can test them by adding one of them to your `style.c
 
 #### Want to [create your own theme](angular2Themes.md)?
 
-#### Add `hammerjs` to your project
+### Add `hammerjs` to your project
 **src/app/app.module.ts**
 ```typescript
 import 'hammerjs';
@@ -95,7 +86,7 @@ Finally, you need to add hammerjs to the types section of your tsconfig.json fil
 }
 ```
 
-#### Add Material's Icons (Optional) to your main `index.html`
+### Add Material's Icons (Optional) to your main `index.html`
 Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
 You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
 For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
