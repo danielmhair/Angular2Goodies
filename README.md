@@ -72,31 +72,31 @@ your styles!
 2. Edit `angular-cli.json` from:
 ```json
 {
-  // ...
+  /* ... */
   "apps": [
     {
-      // ...
+      /* ... */
       "styles": [
         "styles.css"
       ]
     }
   ],
-  // ...
+  /* ... */
 }
 ```
 To:
 ```json
 {
-  // ...
+  /* ... */
   "apps": [
     {
-      // ...
+      /* ... */
       "styles": [
         "styles.scss"
       ]
     }
   ],
-  // ...
+  /* ... */
 }
 ```
 
