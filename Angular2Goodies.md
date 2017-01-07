@@ -1,12 +1,15 @@
 # Angular 2 Goodies
-I (Dan) created this page for those who want to learn more about Angular 2.
+I created this page for those who want to learn more about Angular 2.
 
 ## [Angular 2 for Production](angular2Production.md)
-## [External Link on Angular 2 in Production](http://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/)
+
+### [External Link on Angular 2 in Production](http://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/)
+
 ## [NodeJS + Typescript Template](https://github.com/danielmhair/node-typescript-template)
+
 ## [Jasmine Testing in Angular 2](angular2Testing.md)
 
-# Angular 2 Template
+## Angular 2 Template
 As you know, the setup of a project can take quite a while. For this reason, I have made a template that sets up pretty 
 much everything you need in order to start your app. I made this template in order to speed things up. Below, I added 
 the instructions in order to install each portion of this template, but if you just want the template, simple run this: 
@@ -15,20 +18,20 @@ git clone https://github.com/danielmhair/Angular2Goodies my-new-app
 ```
 The parameter `my-new-app` will put the contents of the template into that folder.
 
-## Steps to create the [Angular 2 Template](https://github.com/danielmhair/Angular2Goodies)
+### Steps to create the [Angular 2 Template](template) (or just clone it if you already understand it)
 
-### Create the App via `Angular CLI`
+#### Create the App via `Angular CLI`
 ```batch
 npm install angular-cli
 ng new my-app-name
 cd my-app-name
 ```
-### Install all dependencies via `npm`
+#### Install all dependencies via `npm`
 ```batch
 npm install
 ```
 
-### Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies (hammerjs)
+#### Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies (hammerjs)
 Note: this information comes from the link above (material.angular.io), but it really helped me, so I am simply 
 reiterating what they are saying.
 
@@ -72,7 +75,7 @@ I like #2 the best. But you can test them by adding one of them to your `style.c
 /* ... All other styles for your core app ... */
 ```
 
-##### [Create your own Theme](angular2Themes.md)
+#### Want to [create your own theme](angular2Themes.md)?
 
 #### Add `hammerjs` to your project
 **src/app/app.module.ts**
