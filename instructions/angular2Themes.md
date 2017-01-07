@@ -415,9 +415,10 @@ $theme: light-theme($primary-color, $secondary-color, $accent-color, $success-co
 app-theme($theme)
 ```
 
-## <a name="theming-material-2"></a> Theming your Material 2
+## <a name="theming-material-2"></a> Theming with Material 2
 
 Now that you understand how to theme your own components, its easier to use Material 2's theme variables and functions
 to make your life even easier.
+
 
 

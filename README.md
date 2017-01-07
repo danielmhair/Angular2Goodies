@@ -62,7 +62,14 @@ I like #2 the best. But you can test them by adding one of them to your `style.c
 /* ... All other styles for your core app ... */
 ```
 
-### Want to [create your own theme](angular2Themes.md)?
+### Want to [create your own theme](instructions/angular2Themes.md)?
+It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable 
+time. In order to do this, you can do of one of two things:
+
+1. [Theming Tutorial](instructions/angular2Themes.md). Go through the tutorial about the import
+aspects of theming using SASS (SASS is explained).
+2. [Theming with Material 2](instructions/angular2Themes.md#theming-material-2). This will show you directly how to
+style your app very quickly (but it can be confusing without explanations).
 
 ### Add `hammerjs` to your project
 **src/app/app.module.ts**
