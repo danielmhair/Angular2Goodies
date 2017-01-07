@@ -1,7 +1,10 @@
 # Table of Contents
 
 - [Create your own Theme](#own-theme)
-- [](#sass-styling)
+- [SASS Styling](#sass-styling)
+- [Theming your own app](#theming-your-app)
+- [Using Material 2 to improve your theming](#theming-material-2)
+
 ## <a name="own-theme"></a> Create your own Theme
 As I'm sure you know, having a set theme for your app is really amazing once its set up (you might have
 experienced this when you started using bootstrap). 
@@ -9,7 +12,7 @@ experienced this when you started using bootstrap).
 What is great, is that Angular Material supports theming and can be a tremendous help to you, if you embrace it. 
 I encourage you to read and follow the tutorial here.
 
-## [SASS](http://sass-lang.com/guide) Styling
+## <a name="sass-styling"></a> [SASS](http://sass-lang.com/guide) Styling
 I know this is another thing to learn, but there really isn't too much to learn. It uses the same programming 
 principles that we all know and love. Not only that, but add your CSS and you have SASS! (for the most part)
 
@@ -278,7 +281,7 @@ Material 2 makes, they have a theme mixin that you include in the angular-materi
 
 Lets make one for our app.
 
-## Theming your own App
+## <a name="theming-your-app"></a> Theming your own App
 
 ### 1. Create your App Mixin
 **`_app-theme.mixin.scss`**
@@ -411,3 +414,10 @@ $theme: light-theme($primary-color, $secondary-color, $accent-color, $success-co
  */
 app-theme($theme)
 ```
+
+## <a name="theming-material-2"></a> Theming your Material 2
+
+Now that you understand how to theme your own components, its easier to use Material 2's theme variables and functions
+to make your life even easier.
+
+
