@@ -1,7 +1,7 @@
 # Table of Contents
 
 - [Create your own Theme](#own-theme)
-
+- [](#sass-styling)
 ## <a name="own-theme"></a> Create your own Theme
 As I'm sure you know, having a set theme for your app is really amazing once its set up (you might have
 experienced this when you started using bootstrap). 
@@ -278,7 +278,9 @@ Material 2 makes, they have a theme mixin that you include in the angular-materi
 
 Lets make one for our app.
 
-#### 1. Create your App Mixin
+## Theming your own App
+
+### 1. Create your App Mixin
 **`_app-theme.mixin.scss`**
 ```scss
 @mixin app-theme($theme) {
@@ -286,7 +288,7 @@ Lets make one for our app.
 }
 ```
 
-#### 2. Create your components and mixin for each component
+### 2. Create your components and mixin for each component
 For the sake of space, I will make a simple example. Its actually from Material 2's [example 
 for a toolbar](https://github.com/angular/material2/tree/master/src/demo-app/toolbar)
 
@@ -375,7 +377,7 @@ of keys and values (also known as a map). This function will simply return the v
 }
 ```
 
-#### 3. Add your component mixins to your theme
+### 3. Add your component mixins to your theme
 With this mixin, it will allow you to change the primary, secondary, accent, success and danger colors by changing one line of code.
 
 Remember how we made the `_app-theme.mixin.scss` file?
@@ -391,7 +393,7 @@ NOTE: Keep in mind that when we imported the mixin, we didn't include the '_'. T
 }
 ```
 
-#### 4. Apply these changes to your main scss file: `styles.scss`
+### 4. Apply these changes to your main scss file: `styles.scss`
 Then all you need to do is change one more thing in your `styles.scss` file:
 **`styles.scss`**
 ```scss
@@ -409,6 +411,3 @@ $theme: light-theme($primary-color, $secondary-color, $accent-color, $success-co
  */
 app-theme($theme)
 ```
-
-
-
