@@ -88,9 +88,20 @@ For example, one icon name is "attach file", so the name in the HTML will be 'at
 ```
 If you want to use this, add this link reference in your `index.html`.
 
-**src/index.html**
+**`src/index.html`**
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+### Add Bootstrap Styling to your project
+```bash
+npm install --save bootstrap-sass
+```
+
+Now that you have `bootstrap-sass` installed, import the stylesheets into your `styles.css`
+```scss
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap";
 ```
 
 ### Add Font Awesome Icons
