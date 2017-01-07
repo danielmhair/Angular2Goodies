@@ -48,7 +48,7 @@ export class AppModule { }
 If you used `Angular CLI`, you will have a `style.css` file. Locate it and edit it.
 
 This is where I got hung up for a day or so. The styles of Material 2 was not working. It was because I missed adding
-a theme to Material 2. You have three choices:
+a theme to Material 2. You have four choices:
 
 1. @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 2. @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
@@ -131,8 +131,6 @@ Once you have the `css` file included, you can use font-awesome icons like so:
 ```html
 <md-icon fontSet="fa" fontIcon="fa-home"></md-icon>
 ```
-
-For fun, there is a [LLNL Navbar Component](https://www.github.com/danielmhair/llnl-navbar-component) that I created. Hope you guys like it.
 
 ## Beware of Outdated Tutorials for Angular 2
 First off, remember that Angular 2 only came out in September 2016.
