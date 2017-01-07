@@ -56,7 +56,6 @@ I like #2 the best. But you can test them by adding one of them to your `style.c
 **`styles.css`**
 ```css
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
-/* ... All other styles for your core app ... */
 ```
 
 While your at it, its best to use SASS as your styling. It won't change any of your `CSS` syntax, but it add a lot more.
@@ -110,10 +109,8 @@ In the `angular-cli.json` file, there is a list of `styles` that you can add css
 add the css file like so:
 ```json
 {
-  ...
   "apps": [
     {
-      ...
       "styles": [
         "styles.scss",
         "../node_modules/font-awesome/css/font-awesome.css"
