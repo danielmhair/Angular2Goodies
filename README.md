@@ -6,19 +6,15 @@ As you know, the setup of a project can take quite a while. For this reason, I h
 much everything you need in order to start your app. I made this template in order to speed things up. Below, I added
 the instructions in order to install each portion of this template, but if you just want the template, simple run this:
 ```
-git clone https://github.com/danielmhair/Angular2Goodies my-new-app
+git clone https://github.com/danielmhair/Angular2Goodies.git my-new-app
 ```
-The parameter `my-new-app` will put the contents of the template into that folder.
+The parameter `my-new-app` will put the contents of this template into that folder.
 
 ### Create the App via `Angular CLI`
 ```batch
-npm install angular-cli
+npm install -g angular-cli
 ng new my-app-name
 cd my-app-name
-```
-### Install all dependencies via `npm`
-```batch
-npm install
 ```
 
 ### Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies (hammerjs)
@@ -66,24 +62,12 @@ I like #2 the best. But you can test them by adding one of them to your `style.c
 /* ... All other styles for your core app ... */
 ```
 
-#### Want to [create your own theme](angular2Themes.md)?
+### Want to [create your own theme](angular2Themes.md)?
 
 ### Add `hammerjs` to your project
 **src/app/app.module.ts**
 ```typescript
 import 'hammerjs';
-```
-
-Finally, you need to add hammerjs to the types section of your tsconfig.json file:
-**tsconfig.json**
-```json
-{
-  "compilerOptions": {
-    "types": [
-      "hammerjs"
-    ]
-  }
-}
 ```
 
 ### Add Material's Icons (Optional) to your main `index.html`

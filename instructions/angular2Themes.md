@@ -1,6 +1,8 @@
 # Table of Contents
+
 - [Create your own Theme](#own-theme)
-# <a name="own-theme"></a> Create your own Theme
+
+## <a name="own-theme"></a> Create your own Theme
 As I'm sure you know, having a set theme for your app is really amazing once its set up (you might have
 experienced this when you started using bootstrap). 
 
@@ -200,23 +202,29 @@ file and find the property `styles` and change the css file to scss like so:
 **`angular-cli.json`** from 
 ```json
 {
-  "compilerOptions": {
-    "styles": [
-      "styles.css",
-      // ...
-    ]
-  }
+  ...
+  "apps": [
+    {
+      "styles": [
+        "styles.css",
+        // ...
+      ]
+    }
+  ]
 }
 ```
 to 
 ```json
 {
-  "compilerOptions": {
-    "styles": [
-      "styles.scss",
-      // ...
-    ]
-  }
+  ...
+  "apps": [
+    {
+      "styles": [
+        "styles.scss",
+        // ...
+      ]
+    }
+  ]
 }
 ```
 
