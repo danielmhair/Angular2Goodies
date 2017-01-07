@@ -1,4 +1,7 @@
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap";
 
-@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+//@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+@import 'assets/scss/app-theme';
+
+

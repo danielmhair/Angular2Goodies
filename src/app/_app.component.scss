@@ -1,0 +1,76 @@
+@import '../assets/scss/variables';
+
+@mixin app-component($theme) {
+  $primary-palette: map-get($theme, primary);
+  $warn-palette: map-get($theme, warn);
+  $accent-palette: map-get($theme, accent);
+  $success-palette: map-get($theme, success);
+  $danger-palette: map-get($theme, danger);
+
+  .fill {
+    flex: 1 1 auto;
+  }
+
+  h1, h2, h3, h4, h5, h6, span, p, md-icon {
+    &.md-primary {
+      /*
+        md-color converts a palette into an actual color.
+        The function is like so: md-color(palette, hue, opacity)
+      */
+      color: md-color($primary-palette, 900, 1);
+    }
+    &.md-warn {
+      color: md-color($warn-palette, 900, 1);
+    }
+    &.md-accent {
+      color: md-color($accent-palette, 900, 1);
+    }
+    &.md-success {
+      color: md-color($success-palette, 900, 1);
+    }
+    &.md-danger {
+      color: md-color($danger-palette, 900, 1);
+    }
+  }
+
+  md-toolbar {
+    &.md-primary {
+      background-color: md-color($primary-palette, 100, 0.3);
+    }
+    &.md-warn {
+      background-color: md-color($warn-palette, 100, 0.3);
+    }
+    &.md-accent {
+      background-color: md-color($accent-palette, 100, 0.3);
+    }
+    &.md-success {
+      background-color: md-color($success-palette, 100, 0.3);
+    }
+    &.md-danger {
+      background-color: md-color($danger-palette, 100, 0.3);
+    }
+  }
+
+  md-card, .alert {
+    &.md-primary {
+      color: md-color($primary-palette, 900, 1);
+      background-color: md-color($primary-palette, 100, 0.3);
+    }
+    &.md-warn {
+      color: md-color($warn-palette, 900, 1);
+      background-color: md-color($warn-palette, 100, 0.3);
+    }
+    &.md-accent {
+      color: md-color($accent-palette, 900, 1);
+      background-color: md-color($accent-palette, 100, 0.3);
+    }
+    &.md-success {
+      color: md-color($success-palette, 900, 1);
+      background-color: md-color($success-palette, 100, 0.3);
+    }
+    &.md-danger {
+      color: md-color($danger-palette, 900, 1);
+      background-color: md-color($danger-palette, 100, 0.3);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '~@angular/material/core/theming/all-theme';
+// Include non-theme styles for core.
+@include md-core();
+
+// Define a theme.
+@import 'variables.scss';
+
+$primary: md-palette($md-indigo, 800, 700, 900);
+$accent:  md-palette($md-deep-purple, 800, 700, 900);
+$danger: md-palette($md-red, 800, 700, 900);
+$success: md-palette($md-green, 800, 700, 900);
+$warn: md-palette($md-amber, 800, 700, 900);
+
+$theme: md-light-theme($primary, $accent, $warn, $success, $danger);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+
+// https://material.io/guidelines/style/color.html#color-color-schemes
+@import 'app.mixins';
+@include app-theme($theme);
