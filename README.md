@@ -17,7 +17,7 @@ ng new my-app-name
 cd my-app-name
 ```
 
-### Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies (hammerjs)
+### Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies ([hammerjs](http://hammerjs.github.io/))
 Note: this information comes from the link above (material.angular.io), but it really helped me, so I am simply
 reiterating what they are saying.
 
