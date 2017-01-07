@@ -49,6 +49,7 @@ If you used `Angular CLI`, you will have a `style.css` file. Locate it and edit 
 
 This is where I got hung up for a day or so. The styles of Material 2 was not working. It was because I missed adding
 a theme to Material 2. You have three choices:
+
 1. @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 2. @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 3. @import '~@angular/material/core/theming/prebuilt/pink-bluegrey.css';
