@@ -63,35 +63,41 @@ I like #2 the best. But you can test them by adding one of them to your `style.c
 /* ... All other styles for your core app ... */
 ```
 
-### Want to [create your own theme](instructions/angular2Themes.md)?
-It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable 
-time. In order to do this, you can do of one of two things:
+While your at it, its best to use SASS as your styling. It won't change any of your `CSS` syntax, but it add a lot more.
 
-1. [Theming Tutorial](instructions/angular2Themes.md). Go through the tutorial about the import
-aspects of theming using SASS (SASS is explained).
-2. [Theming with Material 2](instructions/angular2Themes.md#theming-material-2). This will show you directly how to
-style your app very quickly (but it can be confusing without explanations).
+From here on out, I will be using `scss`. It would be best that you do to, mainly because you can store variables in
+your styles!
 
-### Add `hammerjs` to your project
-**src/app/app.module.ts**
-```typescript
-import 'hammerjs';
+1. Rename `styles.css` to `styles.scss`
+2. Edit `angular-cli.json` from:
+```json
+{
+  // ...
+  "apps": [
+    {
+      // ...
+      "styles": [
+        "styles.css"
+      ]
+    }
+  ],
+  // ...
+}
 ```
-
-### Add Material's Icons (Optional) to your main `index.html`
-Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
-You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
-For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
-`md-icon` component like so:
-
-```html
-<md-icon>attach_file</md-icon>
-```
-If you want to use this, add this link reference in your `index.html`.
-
-**`src/index.html`**
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+To:
+```json
+{
+  // ...
+  "apps": [
+    {
+      // ...
+      "styles": [
+        "styles.scss"
+      ]
+    }
+  ],
+  // ...
+}
 ```
 
 ### Add Bootstrap Styling to your project
@@ -119,7 +125,7 @@ add the css file like so:
     {
       ...
       "styles": [
-        "styles.css",
+        "styles.scss",
         "../node_modules/font-awesome/css/font-awesome.css"
       ]
     }
@@ -127,34 +133,69 @@ add the css file like so:
 }
 ```
 
-Once you have the `css` file included, you can use font-awesome icons like so:
+Once you have the `font-awesome.css` file included, you can use font-awesome icons using Material's Icon Component like
+so:
+
 ```html
 <md-icon fontSet="fa" fontIcon="fa-home"></md-icon>
 ```
 
-## Beware of Outdated Tutorials for Angular 2
+### Add `hammerjs` to your project
+**src/app/app.module.ts**
+```typescript
+import 'hammerjs';
+```
+
+### Add Material's Icons (Optional) to your main `index.html`
+Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
+You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
+For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
+`md-icon` component like so:
+
+```html
+<md-icon>attach_file</md-icon>
+```
+If you want to use this, add this link reference in your `index.html`.
+
+**`src/index.html`**
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+### Want to [create your own theme](instructions/angular2Themes.md)?
+It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable
+time. In order to do this, you can do of one of two things:
+
+1. [Theming Tutorial](instructions/angular2Themes.md). Go through the tutorial about the import
+aspects of theming using SASS (SASS is explained).
+2. [Theming with Material 2](instructions/angular2Themes.md#theming-material-2). This will show you directly how to
+style your app very quickly (but it can be confusing without explanations).
+
+## Tips for Angular 2
+
+### Beware of Outdated Tutorials for Angular 2
 First off, remember that Angular 2 only came out in September 2016.
 So, as you read solutions to your problems, look at the date of the
 post. If it is about any Release Candidate (or before), consider it as
 a bad solution.
 
-## Most Important things to know about Angular 2
+### Most Important things to know about Angular 2
 1. Creating effective Services
 
-2. An Observable is the new Promise (except they aren't promises;
-they are better). Understand Observables in Angular 2.
+2. An [Observable](https://angular-2-training-book.rangle.io/handout/observables/using_observables.html) is the new
+Promise (except they aren't promises; they are better). Understand Observables in Angular 2.
 It is now an old practice to use Promises; instead Observables are
 encouraged in Angular 2 (for good reason, read below to see more details).
 By the way, Observables is how you make effective Services.
 
-3. Learn about RxJS, specifically Subjects and EventEmitters.
+3. Learn about [RxJS](https://github.com/Reactive-Extensions/RxJS), specifically Subjects and EventEmitters.
 These will help you be able to effectively talk to child and
 parent components within Angular 2.
 
-4. Get to know Form Builder in Angular 2 ([Found Here](https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html)).
+4. Get to know [Form Builder in Angular 2](https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html).
 I have found a lot of success with Form Builder. It brings a lot of structure to validating input from users.
 
-## Services give your modular code for your backend server
+### Services give your modular code for your backend server
 As you might know, Services in Angular 2 is a singleton that
 allows you to store data on the client side so your Angular views
 can access and display that data. It can't replace your database
@@ -162,7 +203,7 @@ and backend (and shouldn't replace it), but it is
 your Backend Server Facade. It allows you to get the data you need
 from any backend service.
 
-### The key is to have an API for your application
+#### The key is to have an API for your application
 As you know, NodeJS, Java Play, and any other backend service allows
 you to create APIs to get your data from your database. This will help
 modularize your Angular 2 app, no matter what backend service you use.
@@ -171,7 +212,7 @@ server (for example) for a Java Play Server, all you need to make sure
 is that your API remains the same and returns the same results as your
 NodeJS server did.
 
-### Angular 1 Service vs. Angular 2 Service
+#### Angular 1 Service vs. Angular 2 Service
 An Angular 2 Application with all its glory in Typescript!
 
 ```typescript
@@ -220,7 +261,7 @@ it, just think of it as a promise with amazing and awesome powers!
 Haha, yes, powers. But know it is not a promise. This [link](https://scotch.io/tutorials/angular-2-http-requests-with-observables)
 explains Observables really well. Please read it for more understanding!
 
-#### How Observables work in Angular 2
+##### How Observables work in Angular 2
 As you might know, Observables in programming is a way to subscribe to a
 given event and when something happens, you get notified about it.
 For a real-world example, let's say you want to be told
