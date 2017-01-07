@@ -33,13 +33,9 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 // other imports
 @NgModule({
-  // ...,
   imports: [
-      // ...
       MaterialModule.forRoot()
-      // ...
-  ],
-  // ...
+  ]
 })
 export class AppModule { }
 ```
@@ -72,31 +68,25 @@ your styles!
 2. Edit `angular-cli.json` from:
 ```json
 {
-  /* ... */
   "apps": [
     {
-      /* ... */
       "styles": [
         "styles.css"
       ]
     }
-  ],
-  /* ... */
+  ]
 }
 ```
 To:
 ```json
 {
-  /* ... */
   "apps": [
     {
-      /* ... */
       "styles": [
         "styles.scss"
       ]
     }
-  ],
-  /* ... */
+  ]
 }
 ```
 
