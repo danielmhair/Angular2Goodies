@@ -509,7 +509,7 @@ then added the following:
 }
 ```
 
-Finally, add these three files:
+Finally, add these files:
 
 **`src/app/_app-theme.scss`**
 ```scss
@@ -545,6 +545,41 @@ $theme: md-light-theme($primary, $accent, $warn, $success, $danger);
 }
 ```
 
+**`src/app/_md-bs-theming.scss`**
+```scss
+@import '~@angular/material/core/theming/theming';
+
+// Creates a container object for a light theme to be given to individual component theme mixins.
+@function md-bootstrap-light-theme($primary, $accent, $warn: md-palette($md-orange), $success: md-palette($md-green), $danger: md-palette($md-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    success: $success,
+    danger: $danger,
+    is-dark: false,
+    foreground: $md-light-theme-foreground,
+    background: $md-light-theme-background,
+  );
+}
+
+// Creates a container object for a dark theme to be given to individual component theme mixins.
+@function md-bootstrap-dark-theme($primary, $accent, $warn: md-palette($md-orange), $success: md-palette($md-green), $danger: md-palette($md-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    success: $success,
+    danger: $danger,
+    is-dark: true,
+    foreground: $md-light-theme-foreground,
+    background: $md-light-theme-background,
+  );
+}
+```
+The file above is explained in the tutorial above. Here, we are combining Material 2 colors (primary, warn & accent) with
+bootstrap's general success and danger colors.
+
 **`src/app/_variables.scss`**
 ```scss
 // Its important to import the all-theme from material, because it will give you important functions we use in _app.component.scss
@@ -577,11 +612,4 @@ It will use the defaults (500 - default, 100 - lighter shade, 700 - darker shade
 To test out the components in Material 2 with your new Theme, go [here](https://github.com/angular/material2) under 
 `Getting started`.
 
-Here is what I did as a test (to test the mixin for our app.component as well as the theme for Material 2 with our 
-primary, warn, accent, success and danger colors.
-
-**`app.component.html`**
-```html
-
-```
-Enjoy Theming!
+Finally, clone this repository. This repo gets updated every so often, so the files may be different than what is here.

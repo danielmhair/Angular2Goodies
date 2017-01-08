@@ -11,6 +11,18 @@
     flex: 1 1 auto;
   }
 
+  .full-height {
+    height: 100vh;
+  }
+
+  .full-width {
+    width: 100vw;
+  }
+
+  a, .clickable {
+    cursor: pointer;
+  }
+
   h1, h2, h3, h4, h5, h6, span, p, md-icon {
     &.md-primary {
       /*
@@ -34,20 +46,25 @@
   }
 
   md-toolbar {
+    md-icon.brand-icon {
+      margin-right: 15px;
+    }
+
     &.md-primary {
-      background-color: md-color($primary-palette, 100, 0.3);
+      background-color: md-color($primary-palette);
+
     }
     &.md-warn {
-      background-color: md-color($warn-palette, 100, 0.3);
+      background-color: md-color($warn-palette);
     }
     &.md-accent {
-      background-color: md-color($accent-palette, 100, 0.3);
+      background-color: md-color($accent-palette);
     }
     &.md-success {
-      background-color: md-color($success-palette, 100, 0.3);
+      background-color: md-color($success-palette);
     }
     &.md-danger {
-      background-color: md-color($danger-palette, 100, 0.3);
+      background-color: md-color($danger-palette);
     }
   }
 

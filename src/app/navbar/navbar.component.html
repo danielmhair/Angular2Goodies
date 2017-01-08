@@ -1,0 +1,38 @@
+<md-sidenav-container class="full-height">
+  <md-sidenav #menuRight align="end" mode="push">
+    <md-list>
+      <h3 md-subheader>{{ brand.name }}</h3>
+      <div *ngFor="let link of leftLinks">
+        <md-list-item (click)="menuRight.close()"
+                      [routerLink]="[link.internalLink]"
+                      [routerLinkActive]="['active']">
+          <md-icon md-list-avatar fontSet="fa" [fontIcon]="link.iconPath"></md-icon>
+          <h4 md-line>{{link.name}}</h4>
+        </md-list-item>
+      </div>
+      <md-divider></md-divider>
+      <div *ngFor="let link of rightLinks">
+        <md-list-item (click)="menuRight.close()"
+                      [routerLink]="[link.internalLink]"
+                      [routerLinkActive]="['active']">
+          <md-icon md-list-avatar fontSet="fa" [fontIcon]="link.iconPath"></md-icon>
+          <h4 md-line>{{link.name}}</h4>
+        </md-list-item>
+      </div>
+    </md-list>
+  </md-sidenav>
+  
+  <md-toolbar color="primary">
+    <md-icon class="brand-icon"
+             fontSet="fa" [fontIcon]="brand.iconPath"></md-icon>
+    
+    <span>{{ brand.name }}</span>
+    
+    <span class="fill"></span>
+    
+    <button md-icon-button (click)="menuRight.open()">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+  <ng-content></ng-content>
+</md-sidenav-container>
