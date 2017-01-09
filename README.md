@@ -105,14 +105,11 @@ your styles!
 
     @Component({
         selector: 'example',
-        styleUrls: ['./example.component.scss'],
+        styleUrls: ['./example.component.scss'], // <= Changed from css to scss
         templateUrl: './example.component.html'
     })
     export class ExampleComponent {}
     ```
-
-
-- **Same goes for the `styleUrls` property in your component declaration. Simply change the path to the new file with the `scss` extension**
 
 ### <a name="material-2-import-theme"><a/> [Include Material 2's theme](https://material.angular.io/guide/theming)
 This is where I got hung up for a day or so. The styles of Material 2 were not being applied. It was because I missed adding
@@ -132,12 +129,14 @@ I like #2 the best. But you can test them by adding one of them to your `style.s
 
 ### <a name="create-own-theme"><a/> Creating your own theme
 It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable
-time. In order to do this, you can either use Material's theme or built your own. These links will help you get started:
+time. In order to do this, you can either use Material's theme or build your own. These links will help you get started:
 
-1. [Theming with SASS (`scss`) Tutorial](instructions/angular2Themes.md#sass-tutorial). Go through the tutorial about the import
-aspects of theming using SASS (SASS is explained).
-2. [Theming with Material 2](instructions/angular2Themes.md). This will show you directly how to
+1. [Theming with Material 2](instructions/angular2Themes.md). This will show you directly how to
 style your app very quickly (but it can be confusing without explanations).
+
+2. [Theming with SASS (`scss`) Tutorial](instructions/angular2Themes.md#sass-tutorial). To understand how Material does its theming "magic", go
+through this tutorial. It helps you understand how to theme using SASS and what SASS is.
+
 
 ### <a name="bootstrap"></a> Add Bootstrap Styling to your project
 ```bash
