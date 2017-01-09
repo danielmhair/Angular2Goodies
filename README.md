@@ -12,7 +12,7 @@ I created this page for those who want to learn more about Angular 2.
  - [Create your own theme](#create-own-theme)
  - [Add Bootstrap Styling to your project](#bootstrap) 
  - [Add Font Awesome Icons](#font-awesome)
- - [Tips for Angular 2](#tips)
+- [Tips for Angular 2](#tips)
 
 
 
