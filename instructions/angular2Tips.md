@@ -1,12 +1,17 @@
-## <a name="tips"></a> Tips for Angular 2
+# <a name="tips"></a> Tips for Angular 2
 
-### Beware of Outdated Tutorials for Angular 2
+## Table of Contents
+- [Beward of Outdated Tutorials for Angular 2](#outdated)
+- [Beward of Outdated Tutorials for Angular 2](#important)
+- [Beward of Outdated Tutorials for Angular 2](#services)
+
+## <a name="outdated"></a> Beware of Outdated Tutorials for Angular 2
 First off, remember that Angular 2 only came out in September 2016.
 So, as you read solutions to your problems, look at the date of the
 post. If it is about any Release Candidate (or before), consider it as
 a bad solution.
 
-### Most Important things to know about Angular 2
+## <a name="important"></a> Most Important things to know about Angular 2
 1. Creating effective Services
 
 2. An [Observable](https://angular-2-training-book.rangle.io/handout/observables/using_observables.html) is the new
@@ -22,7 +27,7 @@ parent components within Angular 2.
 4. Get to know [Form Builder in Angular 2](https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html).
 I have found a lot of success with Form Builder. It brings a lot of structure to validating input from users.
 
-### Services give your modular code for your backend server
+## <a name="services"></a> Services give your modular code for your backend server
 As you might know, Services in Angular 2 is a singleton that
 allows you to store data on the client side so your Angular views
 can access and display that data. It can't replace your database
@@ -30,7 +35,7 @@ and backend (and shouldn't replace it), but it is
 your Backend Server Facade. It allows you to get the data you need
 from any backend service.
 
-#### The key is to have an API for your application
+### The key is to have an API for your application
 As you know, NodeJS, Java Play, and any other backend service allows
 you to create APIs to get your data from your database. This will help
 modularize your Angular 2 app, no matter what backend service you use.
@@ -39,7 +44,7 @@ server (for example) for a Java Play Server, all you need to make sure
 is that your API remains the same and returns the same results as your
 NodeJS server did.
 
-#### Angular 1 Service vs. Angular 2 Service
+### Angular 1 Service vs. Angular 2 Service
 An Angular 2 Application with all its glory in Typescript!
 
 ```typescript
@@ -88,7 +93,7 @@ it, just think of it as a promise with amazing and awesome powers!
 Haha, yes, powers. But know it is not a promise. This [link](https://scotch.io/tutorials/angular-2-http-requests-with-observables)
 explains Observables really well. Please read it for more understanding!
 
-##### How Observables work in Angular 2
+#### How Observables work in Angular 2
 As you might know, Observables in programming is a way to subscribe to a
 given event and when something happens, you get notified about it.
 For a real-world example, let's say you want to be told
