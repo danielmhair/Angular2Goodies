@@ -427,7 +427,32 @@ Instead of using one of Material 2's Themes like we did previously like below
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 ```
 
-You can make your own theme ([the file is located here](#app-theme)):
+You can make your own theme file:
+
+<a name="app-theme"></a>**`src/app/_app-theme.scss`**
+```scss
+@import '~@angular/material/core/theming/all-theme';
+// Include non-theme styles for core.
+@include md-core();
+
+// Define a theme.
+@import 'variables.scss';
+
+$primary: md-palette($md-indigo, 700, 800, 900);
+$accent:  md-palette($md-deep-purple, 700, 800, 900);
+$danger: md-palette($md-red, 700, 800, 900);
+$success: md-palette($md-green, 700, 800, 900);
+$warn: md-palette($md-amber, 700, 800, 900);
+
+$theme: md-light-theme($primary, $accent, $warn, $success, $danger);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+
+// https://material.io/guidelines/style/color.html#color-color-schemes
+@import 'app.mixins';
+@include app-theme($theme);
+```
 
 ```scss
 /* You will create this file soon */
@@ -508,33 +533,6 @@ then added the following:
     }
   }
 }
-```
-
-Finally, add these files:
-
-<a name="app-theme"></a>**`src/app/_app-theme.scss`**
-```scss
-@import '~@angular/material/core/theming/all-theme';
-// Include non-theme styles for core.
-@include md-core();
-
-// Define a theme.
-@import 'variables.scss';
-
-$primary: md-palette($md-indigo, 700, 800, 900);
-$accent:  md-palette($md-deep-purple, 700, 800, 900);
-$danger: md-palette($md-red, 700, 800, 900);
-$success: md-palette($md-green, 700, 800, 900);
-$warn: md-palette($md-amber, 700, 800, 900);
-
-$theme: md-light-theme($primary, $accent, $warn, $success, $danger);
-
-// Include all theme styles for the components.
-@include angular-material-theme($theme);
-
-// https://material.io/guidelines/style/color.html#color-color-schemes
-@import 'app.mixins';
-@include app-theme($theme);
 ```
 
 **`src/app/_app.mixins.scss`**
