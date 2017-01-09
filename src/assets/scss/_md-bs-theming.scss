@@ -1,5 +1,5 @@
 @import '~@angular/material/core/theming/theming';
-
+@import '~@angular/material/core/theming/palette';
 // Creates a container object for a light theme to be given to individual component theme mixins.
 @function md-bootstrap-light-theme($primary, $accent, $warn: md-palette($md-orange), $success: md-palette($md-green), $danger: md-palette($md-red)) {
   @return (
@@ -14,7 +14,6 @@
   );
 }
 
-// Creates a container object for a dark theme to be given to individual component theme mixins.
 @function md-bootstrap-dark-theme($primary, $accent, $warn: md-palette($md-orange), $success: md-palette($md-green), $danger: md-palette($md-red)) {
   @return (
     primary: $primary,
@@ -23,7 +22,7 @@
     success: $success,
     danger: $danger,
     is-dark: true,
-    foreground: $md-light-theme-foreground,
-    background: $md-light-theme-background,
+    foreground: $md-dark-theme-foreground,
+    background: $md-dark-theme-background,
   );
 }
