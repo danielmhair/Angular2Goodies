@@ -1,3 +1,8 @@
 @import '~@angular/material/core/theming/all-theme';
+// https://material.io/guidelines/style/color.html#color-color-schemes
 
-// Add variables to your app here to use throughout your whole app.
+$primary-palette: md-palette($md-indigo, 800, 700, 900);
+$accent-palette:  md-palette($md-deep-purple, 800, 700, 900);
+$warn-palette: md-palette($md-amber, 800, 700, 900);
+$danger-palette: md-palette($md-red, 800, 700, 900);
+$success-palette: md-palette($md-green, 800, 700, 900);

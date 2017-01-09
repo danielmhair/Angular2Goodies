@@ -5,18 +5,10 @@
 // Define a theme.
 @import 'variables.scss';
 
-$primary: md-palette($md-indigo, 800, 700, 900);
-$accent:  md-palette($md-deep-purple, 800, 700, 900);
-$danger: md-palette($md-red, 800, 700, 900);
-$success: md-palette($md-green, 800, 700, 900);
-$warn: md-palette($md-amber, 800, 700, 900);
-
-@import '_md-bs-theming';
-$theme: md-bootstrap-light-theme($primary, $accent, $warn, $success, $danger);
+// Add a custom theme for Bootstrap using Material Design styling
+@import 'md-bs-theming';
+$theme: md-bootstrap-light-theme($primary-palette, $accent-palette, $warn-palette, $success-palette, $danger-palette);
 
 // Include all theme styles for the components.
 @include angular-material-theme($theme);
 
-// https://material.io/guidelines/style/color.html#color-color-schemes
-@import 'app.mixins';
-@include app-theme($theme);

@@ -1,13 +1,6 @@
 @import '../assets/scss/variables';
 
-@mixin app-component($theme) {
-  $primary-palette: map-get($theme, primary);
-  $warn-palette: map-get($theme, warn);
-  $accent-palette: map-get($theme, accent);
-  $success-palette: map-get($theme, success);
-  $danger-palette: map-get($theme, danger);
-
-  .fill {
+.fill {
     flex: 1 1 auto;
   }
 
@@ -90,4 +83,3 @@
       background-color: md-color($danger-palette, 100, 0.3);
     }
   }
-}

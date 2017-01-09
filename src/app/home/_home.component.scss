@@ -1,9 +1,0 @@
-@import '../../assets/scss/variables';
-
-@mixin home-component($theme) {
-  $primary-palette: map-get($theme, primary);
-  $warn-palette: map-get($theme, warn);
-  $accent-palette: map-get($theme, accent);
-  $success-palette: map-get($theme, success);
-  $danger-palette: map-get($theme, danger);
-}
