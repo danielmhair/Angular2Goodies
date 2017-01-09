@@ -4,9 +4,15 @@ I created this page for those who want to learn more about Angular 2.
 ## Table of contents
 - [Clone Angular 2 Template](#clone-template)
 - [Create Angular 2 Template via `Angular CLI`](#make-template)
-- [Install Material 2 for Angular 2 and its dependencies (hammerjs)](#material-2-npm)
-- [Include the core and theme styles](#material-2-import-theme)
-- [Convert from `css` to `scss` for styling](#change-to-scss)
+ - [Install Material 2 for Angular 2 and its dependencies (hammerjs)](#material-2-npm)
+ - [Include Material 2's theme or make your own](#material-2-import-theme)
+ - [Convert from `css` to `scss` for styling](#change-to-scss)
+ - [Add `hammerjs` to your project](#hammerjs)
+ - [Add Material's Icons (Optional) to your main `index.html`](#material-icons)
+ - [Create your own theme](#create-own-theme)
+ - [Add Bootstrap Styling to your project](#bootstrap) 
+ - [Add Font Awesome Icons](#font-awesome)
+ - [Tips for Angular 2](#tips)
 
 
 
@@ -50,7 +56,7 @@ import { MaterialModule } from '@angular/material';
 export class AppModule { }
 ```
 
-### <a name="material-2-import-theme"><a/> [Include the core and theme styles](https://material.angular.io/guide/theming)
+### <a name="material-2-import-theme"><a/> [Include Material 2's theme](https://material.angular.io/guide/theming)
 If you used `Angular CLI`, you will have a `style.css` file. Locate it and edit it.
 
 This is where I got hung up for a day or so. The styles of Material 2 was not working. It was because I missed adding
@@ -98,7 +104,38 @@ To:
 }
 ```
 
-### Add Bootstrap Styling to your project
+### <a name="hammerjs"><a/> Add `hammerjs` to your project
+**src/app/app.module.ts**
+```typescript
+import 'hammerjs';
+```
+
+### <a name="material-icons"><a/> Add Material's Icons (Optional) to your main `index.html`
+Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
+You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
+For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
+`md-icon` component like so:
+
+```html
+<md-icon>attach_file</md-icon>
+```
+If you want to use this, add this link reference in your `index.html`.
+
+**`src/index.html`**
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+### <a name="create-own-theme"><a/> [Create your own theme](instructions/angular2Themes.md)?
+It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable
+time. In order to do this, you can do of one of two things:
+
+1. [Theming with SASS (`scss`) Tutorial](instructions/angular2Themes.md#sass-tutorial). Go through the tutorial about the import
+aspects of theming using SASS (SASS is explained).
+2. [Theming with Material 2](instructions/angular2Themes.md). This will show you directly how to
+style your app very quickly (but it can be confusing without explanations).
+
+### <a name="bootstrap"></a> Add Bootstrap Styling to your project
 ```bash
 npm install --save bootstrap-sass
 ```
@@ -109,7 +146,7 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap";
 ```
 
-### Add Font Awesome Icons
+### <a name="font-awesome"></a> Add Font Awesome Icons
 ```batch
 npm install --save font-awesome       # Install Font-Awesome to gain more icons for your application (it's free)
 ```
@@ -136,38 +173,7 @@ so:
 <md-icon fontSet="fa" fontIcon="fa-home"></md-icon>
 ```
 
-### Add `hammerjs` to your project
-**src/app/app.module.ts**
-```typescript
-import 'hammerjs';
-```
-
-### Add Material's Icons (Optional) to your main `index.html`
-Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
-You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
-For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
-`md-icon` component like so:
-
-```html
-<md-icon>attach_file</md-icon>
-```
-If you want to use this, add this link reference in your `index.html`.
-
-**`src/index.html`**
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-```
-
-### Want to [create your own theme](instructions/angular2Themes.md)?
-It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable
-time. In order to do this, you can do of one of two things:
-
-1. [Theming with SASS (`scss`) Tutorial](instructions/angular2Themes.md#sass-tutorial). Go through the tutorial about the import
-aspects of theming using SASS (SASS is explained).
-2. [Theming with Material 2](instructions/angular2Themes.md). This will show you directly how to
-style your app very quickly (but it can be confusing without explanations).
-
-## Tips for Angular 2
+## <a name="tips"></a> Tips for Angular 2
 
 ### Beware of Outdated Tutorials for Angular 2
 First off, remember that Angular 2 only came out in September 2016.
