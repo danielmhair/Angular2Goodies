@@ -152,31 +152,7 @@ principles that we all know and love. Not only that, but add your CSS and you ha
 SASS is superset of CSS (SASS is to CSS as Typescript is to Javascript). SASS allows you to use variables, functions 
 and other things in order to dynamically create your CSS. Don't worry, Angular 2 is already built to handle SASS files, 
 so you just need to add the files. SASS files use the file extension `scss`. All you need to do is convert your `css` 
-file to `scss` and make that change in your component and your set.
-
-Here is an example. Say we have this component that uses `css`.
-```typescript
-import { Component } from '@angular/core';
-@Component({
-    selector: 'example',
-    styleUrls: ['./example.component.css'],
-    templateUrl: './example.component.html'
-})
-export class ExampleComponent {}
-```
-
-Then just rename `'./example.component.css'` to `'example.component.scss'` like so:
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'example',
-    styleUrls: ['./example.component.scss'],
-    templateUrl: './example.component.html'
-})
-export class ExampleComponent {}
-```
-Then rename your `css` file to a `scss` file. All your css styles will still apply in your `scss`.
+file to `scss` and [make that change in your component](../README.md#convert-to-sass-component).
 
 ### `SCSS` Highlights
 
