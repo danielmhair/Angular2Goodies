@@ -112,12 +112,12 @@ To:
 
 ### <a name="material-2-import-theme"><a/> [Include Material 2's theme](https://material.angular.io/guide/theming)
 This is where I got hung up for a day or so. The styles of Material 2 were not being applied. It was because I missed adding
-a theme to Material 2. You have four choices:
+a theme to Material 2. You have these choices:
 
-1. @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
-2. @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
-3. @import '~@angular/material/core/theming/prebuilt/pink-bluegrey.css';
-4. @import '~@angular/material/core/theming/prebuilt/purple-green.css';
+- `@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';`
+- `@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';`
+- `@import '~@angular/material/core/theming/prebuilt/pink-bluegrey.css';`
+- `@import '~@angular/material/core/theming/prebuilt/purple-green.css';`
 
 I like #2 the best. But you can test them by adding one of them to your `style.scss` like so:
 
