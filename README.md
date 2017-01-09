@@ -79,8 +79,8 @@ If you want to use this, add this link reference in your `index.html`.
 ```
 
 #### <a name="change-to-scss"><a/> Convert from `css` to `scss` for styling in your app
-From here on out, I will be using `scss`. You can learn about this [here](instructions/angular2Themes#). It would be best that you do to, mainly because you can store variables in
-your styles!
+From here on out, I will be using `scss`. You can learn about this [here](instructions/angular2Themes#). It would be best that you do too, 
+mainly because you can store variables in your styles!
 
 - **Rename `src/styles.css` to `src/styles.scss`**
 - **Edit `angular-cli.json` and change `styles.css` to `styles.scss` like so:**
