@@ -33,7 +33,7 @@ ng new my-app-name
 cd my-app-name
 ```
 
-### <a name="material-2-npm"><a/> Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies ([hammerjs](http://hammerjs.github.io/))
+#### <a name="material-2-npm"><a/> Install [Material 2 for Angular 2](https://material.angular.io/) and its dependencies ([hammerjs](http://hammerjs.github.io/))
 Note: this information comes from the link above (material.angular.io), but it really helped me, so I am simply
 reiterating what they are saying.
 
@@ -43,7 +43,7 @@ npm install --save hammerjs
 npm install --save-dev @types/hammerjs
 ```
 
-### <a name="material-2-import-module"><a/> Import the NgModule for Material 2 into your `app.module.ts` file
+#### <a name="material-2-import-module"><a/> Import the NgModule for Material 2 into your `app.module.ts` file
 ```typescript
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '@angular/material';
@@ -56,13 +56,13 @@ import { MaterialModule } from '@angular/material';
 export class AppModule { }
 ```
 
-### <a name="hammerjs"><a/> Add `hammerjs` to your project
+#### <a name="hammerjs"><a/> Add `hammerjs` to your project
 **src/app/app.module.ts**
 ```typescript
 import 'hammerjs';
 ```
 
-### <a name="material-icons"><a/> Add Material's Icons (Optional) to your main `index.html`
+#### <a name="material-icons"><a/> Add Material's Icons (Optional) to your main `index.html`
 Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
 You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
 For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
@@ -78,7 +78,7 @@ If you want to use this, add this link reference in your `index.html`.
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
 
-### <a name="change-to-scss"><a/> Convert from `css` to `scss` for styling
+#### <a name="change-to-scss"><a/> Convert from `css` to `scss` for styling in your app
 From here on out, I will be using `scss`. You can learn about this [here](instructions/angular2Themes#). It would be best that you do to, mainly because you can store variables in
 your styles!
 
@@ -107,6 +107,8 @@ To:
   ]
 }
 ```
+3. Any component in your app, you will need to rename all `*.component.css` to `*.component.scss`
+4. Same goes for the `styleUrls` property in your component declaration. Simply change the path to the new file with the `scss` extension.
 
 ### <a name="material-2-import-theme"><a/> [Include Material 2's theme](https://material.angular.io/guide/theming)
 This is where I got hung up for a day or so. The styles of Material 2 were not being applied. It was because I missed adding
