@@ -82,8 +82,8 @@ If you want to use this, add this link reference in your `index.html`.
 From here on out, I will be using `scss`. You can learn about this [here](instructions/angular2Themes#). It would be best that you do to, mainly because you can store variables in
 your styles!
 
-- **Rename `styles.css` to `styles.scss`**
-- **Edit `angular-cli.json` and change `styles.css` to `styles.scss`:**
+- **Rename `src/styles.css` to `src/styles.scss`**
+- **Edit `angular-cli.json` and change `styles.css` to `styles.scss` like so:**
 ```json
 {
   "apps": [
@@ -96,7 +96,10 @@ your styles!
 }
 ```
 
-- **<a name="convert-to-sass-component"></a> Convert any component's styling from `css` to `scss`**
+- **<a name="convert-to-sass-component"></a> Convert any component's styling from `css` to `scss` as follows:**
+ - *Rename your `css` file to a `scss` file. All your css styles will still apply in your `scss`.*
+ - *Apply the file extension change in your component class*
+
 Here is an example. Say we have this component that uses `css`.
 ```typescript
 import { Component } from '@angular/core';
@@ -119,9 +122,9 @@ import { Component } from '@angular/core';
 })
 export class ExampleComponent {}
 ```
-Then rename your `css` file to a `scss` file. All your css styles will still apply in your `scss`.
 
-- **Same goes for the `styleUrls` property in your component declaration. Simply change the path to the new file with the `scss` extension.**
+
+- **Same goes for the `styleUrls` property in your component declaration. Simply change the path to the new file with the `scss` extension**
 
 ### <a name="material-2-import-theme"><a/> [Include Material 2's theme](https://material.angular.io/guide/theming)
 This is where I got hung up for a day or so. The styles of Material 2 were not being applied. It was because I missed adding
