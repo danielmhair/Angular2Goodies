@@ -128,7 +128,7 @@ I like #2 the best. But you can test them by adding one of them to your `style.s
 
 ### <a name="create-own-theme"><a/> Creating your own theme
 It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable
-time. In order to do this, you can do of one of two things:
+time. In order to do this, you can either use Material's theme or built your own. These links will help you get started:
 
 1. [Theming with SASS (`scss`) Tutorial](instructions/angular2Themes.md#sass-tutorial). Go through the tutorial about the import
 aspects of theming using SASS (SASS is explained).
