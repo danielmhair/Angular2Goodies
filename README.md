@@ -126,7 +126,7 @@ I like #2 the best. But you can test them by adding one of them to your `style.s
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 ```
 
-### <a name="create-own-theme"><a/> [Create your own theme](instructions/angular2Themes.md)?
+### <a name="create-own-theme"><a/> Creating your own theme
 It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable
 time. In order to do this, you can do of one of two things:
 
