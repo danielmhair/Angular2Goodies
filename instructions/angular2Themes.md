@@ -427,7 +427,7 @@ Instead of using one of Material 2's Themes like we did previously like below
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 ```
 
-You can make your own theme ([the file is located here]()):
+You can make your own theme ([the file is located here](#app-theme)):
 
 ```scss
 /* You will create this file soon */
