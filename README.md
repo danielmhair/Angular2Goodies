@@ -5,11 +5,11 @@ I created this page for those who want to learn more about Angular 2.
 - [Clone Angular 2 Template](#clone-template)
 - [Create Angular 2 Template via `Angular CLI`](#make-template)
  - [Install Material 2 for Angular 2 and its dependencies (hammerjs)](#material-2-npm)
- - [Include Material 2's theme or make your own](#material-2-import-theme)
- - [Convert from `css` to `scss` for styling](#change-to-scss)
  - [Add `hammerjs` to your project](#hammerjs)
  - [Add Material's Icons (Optional) to your main `index.html`](#material-icons)
- - [Create your own theme](#create-own-theme)
+ - [Convert from `css` to `scss` for styling](#change-to-scss)
+ - [Include Material 2's theme](#material-2-import-theme)
+ - [Creating your own theme](#create-own-theme)
  - [Add Bootstrap Styling to your project](#bootstrap) 
  - [Add Font Awesome Icons](#font-awesome)
 - [Tips for Angular 2](#tips)
@@ -56,22 +56,26 @@ import { MaterialModule } from '@angular/material';
 export class AppModule { }
 ```
 
-### <a name="material-2-import-theme"><a/> [Include Material 2's theme](https://material.angular.io/guide/theming)
-If you used `Angular CLI`, you will have a `style.css` file. Locate it and edit it.
+### <a name="hammerjs"><a/> Add `hammerjs` to your project
+**src/app/app.module.ts**
+```typescript
+import 'hammerjs';
+```
 
-This is where I got hung up for a day or so. The styles of Material 2 was not working. It was because I missed adding
-a theme to Material 2. You have four choices:
+### <a name="material-icons"><a/> Add Material's Icons (Optional) to your main `index.html`
+Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
+You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
+For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
+`md-icon` component like so:
 
-1. @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
-2. @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
-3. @import '~@angular/material/core/theming/prebuilt/pink-bluegrey.css';
-4. @import '~@angular/material/core/theming/prebuilt/purple-green.css';
+```html
+<md-icon>attach_file</md-icon>
+```
+If you want to use this, add this link reference in your `index.html`.
 
-I like #2 the best. But you can test them by adding one of them to your `style.css` like so:
-
-**`styles.css`**
-```css
-@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+**`src/index.html`**
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
 
 ### <a name="change-to-scss"><a/> Convert from `css` to `scss` for styling
@@ -104,26 +108,20 @@ To:
 }
 ```
 
-### <a name="hammerjs"><a/> Add `hammerjs` to your project
-**src/app/app.module.ts**
-```typescript
-import 'hammerjs';
-```
+### <a name="material-2-import-theme"><a/> [Include Material 2's theme](https://material.angular.io/guide/theming)
+This is where I got hung up for a day or so. The styles of Material 2 were not being applied. It was because I missed adding
+a theme to Material 2. You have four choices:
 
-### <a name="material-icons"><a/> Add Material's Icons (Optional) to your main `index.html`
-Material Icons are used through the `md-icon` component. To use these, go to this [link](https://material.io/icons/).
-You will find some icon name. Wherever you see a space in the icon name, replace it with an '_'.
-For example, one icon name is "attach file", so the name in the HTML will be 'attach_file'. You would use
-`md-icon` component like so:
+1. @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+2. @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+3. @import '~@angular/material/core/theming/prebuilt/pink-bluegrey.css';
+4. @import '~@angular/material/core/theming/prebuilt/purple-green.css';
 
-```html
-<md-icon>attach_file</md-icon>
-```
-If you want to use this, add this link reference in your `index.html`.
+I like #2 the best. But you can test them by adding one of them to your `style.scss` like so:
 
-**`src/index.html`**
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+**`styles.scss`**
+```scss
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 ```
 
 ### <a name="create-own-theme"><a/> [Create your own theme](instructions/angular2Themes.md)?
