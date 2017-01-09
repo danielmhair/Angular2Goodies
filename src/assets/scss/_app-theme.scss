@@ -7,8 +7,8 @@
 
 // Add a custom theme for Bootstrap using Material Design styling
 @import 'md-bs-theming';
-$theme: md-bootstrap-dark-theme($primary-palette, $accent-palette, $warn-palette, $success-palette, $danger-palette);
-// $theme: md-dark-theme($primary-palette, $accent-palette, $warn-palette);
+$theme: md-bootstrap-light-theme($primary-palette, $accent-palette, $warn-palette, $success-palette, $danger-palette);
+// $theme: md-light-theme($primary-palette, $accent-palette, $warn-palette);
 
 // Include all theme styles for the components.
 @include angular-material-theme($theme);
