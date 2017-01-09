@@ -97,31 +97,19 @@ your styles!
 ```
 
 - **<a name="convert-to-sass-component"></a> Convert any component's styling from `css` to `scss` as follows:**
- - *Rename your `css` file to a `scss` file. All your css styles will still apply in your `scss`.*
- - *Apply the file extension change in your component class*
+ - *Rename your component's `css` file to a `scss` file. All your css styles will still apply in your `scss`.*
+ - *Apply the file extension change in your component class so your result is as follows:*
 
-Here is an example. Say we have this component that uses `css`.
-```typescript
-import { Component } from '@angular/core';
-@Component({
-    selector: 'example',
-    styleUrls: ['./example.component.css'],
-    templateUrl: './example.component.html'
-})
-export class ExampleComponent {}
-```
+  ```typescript
+  import { Component } from '@angular/core';
 
-Rename `'./example.component.css'` to `'example.component.scss'` like so:
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'example',
-    styleUrls: ['./example.component.scss'],
-    templateUrl: './example.component.html'
-})
-export class ExampleComponent {}
-```
+  @Component({
+      selector: 'example',
+      styleUrls: ['./example.component.scss'],
+      templateUrl: './example.component.html'
+  })
+  export class ExampleComponent {}
+  ```
 
 
 - **Same goes for the `styleUrls` property in your component declaration. Simply change the path to the new file with the `scss` extension**
