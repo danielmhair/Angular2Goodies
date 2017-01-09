@@ -1,16 +1,27 @@
 # Angular 2 Template and Goodies
 I created this page for those who want to learn more about Angular 2.
 
-## Angular 2 Template
+## Table of contents
+- [](#clone-template)
+- [](#make-template)
+-- [](#material-2-npm)
+-- [](#material-2-import-module)
+-- [](#material-2-import-theme)
+-- [](#material-2-import-theme)
+
+
+
+## Clone Angular 2 Template
 As you know, the setup of a project can take quite a while. For this reason, I have made a template that sets up pretty
 much everything you need in order to start your app. I made this template in order to speed things up. Below, I added
 the instructions in order to install each portion of this template, but if you just want the template, simple run this:
 ```
 git clone https://github.com/danielmhair/Angular2Goodies.git my-new-app
+npm install
 ```
 The parameter `my-new-app` will put the contents of this template into that folder.
 
-### Create the App via `Angular CLI`
+## Create Angular 2 Template via `Angular CLI`
 ```batch
 npm install -g angular-cli
 ng new my-app-name
@@ -40,7 +51,7 @@ import { MaterialModule } from '@angular/material';
 export class AppModule { }
 ```
 
-### Include the [core and theme styles](https://material.angular.io/guide/theming)
+### [Include the core and theme styles](https://material.angular.io/guide/theming)
 If you used `Angular CLI`, you will have a `style.css` file. Locate it and edit it.
 
 This is where I got hung up for a day or so. The styles of Material 2 was not working. It was because I missed adding
@@ -58,9 +69,8 @@ I like #2 the best. But you can test them by adding one of them to your `style.c
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 ```
 
-While your at it, its best to use SASS as your styling. It won't change any of your `CSS` syntax, but it add a lot more.
-
-From here on out, I will be using `scss`. It would be best that you do to, mainly because you can store variables in
+### Change main stylesheet from `css` to `scss` file extension
+From here on out, I will be using `scss`. You can learn about this [here](instructions/angular2Themes#). It would be best that you do to, mainly because you can store variables in
 your styles!
 
 1. Rename `styles.css` to `styles.scss`

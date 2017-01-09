@@ -1,9 +1,9 @@
 # Table of Contents
 
 - [Create your own Theme](#own-theme)
-- [SASS Styling](#sass-styling)
-- [Theming your own app](#theming-your-app)
 - [Using Material 2 to improve your theming](#theming-material-2)
+- [SASS Tutorial](#sass-tutorial)
+- [Understanding how Material 2 creates a theme](#theming-your-app)
 
 ## <a name="own-theme"></a> Create your own Theme
 As I'm sure you know, having a set theme for your app is really amazing once its set up (you might have
@@ -12,7 +12,7 @@ experienced this when you started using bootstrap).
 What is great, is that Angular Material supports theming and can be a tremendous help to you, if you embrace it. 
 I encourage you to read and follow the tutorial [here](#sass-tutorial).
 
-### <a name="theming-material-2"></a> Theming with Material 2
+### <a name="theming-material-2"></a> Using Material 2 to improve your own theme
 
 Now that you understand how to theme your own components, you can now use Material 2's theme variables and functions
 to make your life even easier when creating your app.
@@ -21,174 +21,27 @@ Instead of using one of Material 2's Themes like we did previously like below
 
 **`styles.scss`**
 ```scss
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 ```
 
-You can make your own theme file:
+You can make your own theme files. You will need two files:
+1. `src/app/_variables.scss` - Variables you will use throughout your app
+2. `src/app/_app-theme.scss` - Main Theme file
 
-<a name="app-theme"></a>**`src/app/_app-theme.scss`**
+Here are the files:
+
+- **`src/app/_variables.scss`**
 ```scss
 @import '~@angular/material/core/theming/all-theme';
-// Include non-theme styles for core.
-@include md-core();
 
-// Define a theme.
-@import 'variables.scss';
-
-$primary: md-palette($md-indigo, 700, 800, 900);
-$accent:  md-palette($md-deep-purple, 700, 800, 900);
-$danger: md-palette($md-red, 700, 800, 900);
-$success: md-palette($md-green, 700, 800, 900);
-$warn: md-palette($md-amber, 700, 800, 900);
-
-$theme: md-light-theme($primary, $accent, $warn, $success, $danger);
-
-// Include all theme styles for the components.
-@include angular-material-theme($theme);
-
-// https://material.io/guidelines/style/color.html#color-color-schemes
-@import 'app.mixins';
-@include app-theme($theme);
+// md-palette asks for a base palette, the default color, a light color and a dark color (as shown below)
+// The colors below are referenced here: https://material.io/guidelines/style/color.html#color-color-schemes
+$primary-palette: md-palette($md-indigo, 800, 700, 900);
+$accent-palette:  md-palette($md-deep-purple, 800, 700, 900);
+$warn-palette: md-palette($md-amber, 800, 700, 900);
+$danger-palette: md-palette($md-red, 800, 700, 900);
+$success-palette: md-palette($md-green, 800, 700, 900);
 ```
-
-```scss
-/* You will create this file soon */
-@import './assets/scss/app.theme.scss';
-```
-
-Also, since I am importing all my styles through this file, I am no longer using the styleUrls in my components like so:
-
-**`app.component.ts`**
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
-})
-export class AppComponent {
-  title = 'app works!';
-}
-```
-
-I then renamed `app.component.css` to `_app.component.scss`, because this would be considered a partial file. I
-then added the following:
-
-**`_app.component.scss`**
-```scss
-@import '../assets/scss/variables';
-
-@mixin app-component($theme) {
-  $primary-palette: map-get($theme, primary);
-  $warn-palette: map-get($theme, warn);
-  $accent-palette: map-get($theme, accent);
-  $success-palette: map-get($theme, success);
-  $danger-palette: map-get($theme, danger);
-
-  h1, h2, h3, h4, h5, h6, span, p, md-icon {
-    &.md-primary {
-      /*
-        md-color converts a palette into an actual color.
-        The function is like so: md-color(palette, hue, opacity)
-      */
-      color: md-color($primary-palette, 900, 1);
-    }
-    &.md-warn {
-      color: md-color($warn-palette, 900, 1);
-    }
-    &.md-accent {
-      color: md-color($accent-palette, 900, 1);
-    }
-    &.md-success {
-      color: md-color($success-palette, 900, 1);
-    }
-    &.md-danger {
-      color: md-color($danger-palette, 900, 1);
-    }
-  }
-
-  md-card, .alert {
-    &.md-primary {
-      color: md-color($primary-palette, 900, 1);
-      background-color: md-color($primary-palette, 100, 0.3);
-    }
-    &.md-warn {
-      color: md-color($warn-palette, 900, 1);
-      background-color: md-color($warn-palette, 100, 0.3);
-    }
-    &.md-accent {
-      color: md-color($accent-palette, 900, 1);
-      background-color: md-color($accent-palette, 100, 0.3);
-    }
-    &.md-success {
-      color: md-color($success-palette, 900, 1);
-      background-color: md-color($success-palette, 100, 0.3);
-    }
-    &.md-danger {
-      color: md-color($danger-palette, 900, 1);
-      background-color: md-color($danger-palette, 100, 0.3);
-    }
-  }
-}
-```
-
-**`src/app/_app.mixins.scss`**
-```scss
-@import '../../app/app.component';
-
-@mixin app-theme($theme) {
-  @include app-component($theme);
-}
-```
-
-**`src/app/_md-bs-theming.scss`**
-```scss
-@import '~@angular/material/core/theming/theming';
-
-// Creates a container object for a light theme to be given to individual component theme mixins.
-@function md-bootstrap-light-theme($primary, $accent, $warn: md-palette($md-orange), $success: md-palette($md-green), $danger: md-palette($md-red)) {
-  @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    success: $success,
-    danger: $danger,
-    is-dark: false,
-    foreground: $md-light-theme-foreground,
-    background: $md-light-theme-background,
-  );
-}
-
-// Creates a container object for a dark theme to be given to individual component theme mixins.
-@function md-bootstrap-dark-theme($primary, $accent, $warn: md-palette($md-orange), $success: md-palette($md-green), $danger: md-palette($md-red)) {
-  @return (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-    success: $success,
-    danger: $danger,
-    is-dark: true,
-    foreground: $md-light-theme-foreground,
-    background: $md-light-theme-background,
-  );
-}
-```
-The file above is explained in the tutorial above. Here, we are combining Material 2 colors (primary, warn & accent) with
-bootstrap's general success and danger colors.
-
-**`src/app/_variables.scss`**
-```scss
-// Its important to import the all-theme from material, because it will give you important functions we use in _app.component.scss
-@import '~@angular/material/core/theming/all-theme';
-
-// Add variables to your app here to use throughout your whole app.
-```
-This variables file is empty, but can be handy when you want variables throughout your app
-
-Now you have an app that uses Materials theme. To edit any of the core colors for your app, simply use
-[Material 2's palette](https://material.io/guidelines/style/color.html#color-color-palette) and change the colors in
-your `_app-theme.scss` file. 
-
 For example, if you wanted to edit the primary color, you would find this variable:
 ```scss
 $primary: md-palette($md-indigo, 800, 700, 900);
@@ -204,6 +57,87 @@ $primary: md-palette($md-indigo);
 
 It will use the defaults (500 - default, 100 - lighter shade, 700 - darker shade).
 
+Now, we use those in our app-theme file, shown below:
+
+- <a name="app-theme"></a>**`assets/scss/_app-theme.scss`**
+```scss
+@import '~@angular/material/core/theming/all-theme';
+
+// Include non-theme styles for core.
+@include md-core();
+
+// Define a theme.
+@import 'variables';
+
+// Create your theme using Material's light theme as well as the variables you imported above
+// (you can replace this with md-dark-theme if you want)
+$theme: md-light-theme($primary, $accent, $warn);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+```
+
+This file will replace the prebuilt theme you just imported in your `styles.scss` like so:
+```scss
+// @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+@import 'assets/scss/app-theme';
+```
+
+Since we have the `_variables.scss` file, we now can import that file into each of our component `scss` files (previously `css` files).
+
+**`app.component.scss`**
+```scss
+@import '../assets/scss/variables';
+h1, h2, h3, h4, h5, h6, span, p, md-icon {
+  &.md-primary {
+    /*
+      md-color converts a palette into an actual color.
+      The function is like so: md-color(palette, hue, opacity)
+    */
+    color: md-color($primary-palette, 900, 1);
+  }
+  &.md-warn {
+    color: md-color($warn-palette, 900, 1);
+  }
+  &.md-accent {
+    color: md-color($accent-palette, 900, 1);
+  }
+  &.md-success {
+    color: md-color($success-palette, 900, 1);
+  }
+  &.md-danger {
+    color: md-color($danger-palette, 900, 1);
+  }
+}
+
+md-card, .alert {
+  &.md-primary {
+    color: md-color($primary-palette, 900, 1);
+    background-color: md-color($primary-palette, 100, 0.3);
+  }
+  &.md-warn {
+    color: md-color($warn-palette, 900, 1);
+    background-color: md-color($warn-palette, 100, 0.3);
+  }
+  &.md-accent {
+    color: md-color($accent-palette, 900, 1);
+    background-color: md-color($accent-palette, 100, 0.3);
+  }
+  &.md-success {
+    color: md-color($success-palette, 900, 1);
+    background-color: md-color($success-palette, 100, 0.3);
+  }
+  &.md-danger {
+    color: md-color($danger-palette, 900, 1);
+    background-color: md-color($danger-palette, 100, 0.3);
+  }
+}
+```
+
+Now you have an app that uses Materials theme. To edit any of the core colors for your app, simply use
+[Material 2's palette](https://material.io/guidelines/style/color.html#color-color-palette) and change the colors in
+your `_variables.scss` file. As long as you use the palettes from the variables in your components, then your app will 
+be themed.
 
 To test out the components in Material 2 with your new Theme, go [here](https://github.com/angular/material2) under 
 `Getting started`.
@@ -211,7 +145,7 @@ To test out the components in Material 2 with your new Theme, go [here](https://
 However, a lot of this can get confusing at the start, I have explanations about all this below. Go ahead and see the tutorial below 
 (or just read it).
 
-## <a name="sass-tutorial"></a> [SASS](http://sass-lang.com/guide) Styling
+## <a name="sass-tutorial"></a> [SASS](http://sass-lang.com/guide) Tutorial
 I know this is another thing to learn, but there really isn't too much to learn. It uses the same programming 
 principles that we all know and love. Not only that, but add your CSS and you have SASS! (for the most part)
 
@@ -480,18 +414,29 @@ Material 2 makes, they have a theme mixin that you include in the angular-materi
 
 Lets make one for our app.
 
-## <a name="theming-your-app"></a> Theming your own App
+## <a name="theming-your-app"></a> Understanding how Material 2 creates a theme
 
+### Example of Using Mixins: How Material uses mixin to create their theme
+To better understand Material and how they theme, they use mixins. For example, this is a snippet of their code
 
-### 1. Create your App Mixin
-**`_app-theme.mixin.scss`**
+**`core/theming/_all-theme.scss`**
 ```scss
-@mixin app-theme($theme) {
-  
+// Import all the theming functionality.
+@import '../core';
+@import '../../autocomplete/autocomplete-theme';
+@import '../../button/button-theme';
+// ...
+
+// Create a theme.
+@mixin angular-material-theme($theme) {
+  @include md-core-theme($theme);
+  @include md-autocomplete-theme($theme);
+  @include md-button-theme($theme);
+  // ...
 }
 ```
 
-### 2. Create your components and mixin for each component
+### For each modular component they created a mixin
 For the sake of space, I will make a simple example. Its actually from Material 2's [example 
 for a toolbar](https://github.com/angular/material2/tree/master/src/demo-app/toolbar)
 
@@ -580,37 +525,36 @@ of keys and values (also known as a map). This function will simply return the v
 }
 ```
 
-### 3. Add your component mixins to your theme
-With this mixin, it will allow you to change the primary, secondary, accent, success and danger colors by changing one line of code.
-
-Remember how we made the `_app-theme.mixin.scss` file?
-Well, all we need to do is import our new `_toolbar-demo.mixin.scss` file into it like so:
-
-NOTE: Keep in mind that when we imported the mixin, we didn't include the '_'. The compiler knows how to handle this.
-
+### Add your component mixin to your theme
 **`_app-theme.mixin.scss`**
 ```scss
-@import '../app/toolbar-demo/toolbar-demo.mixin';
+@import '../app/toolbar-demo/toolbar-demo.mixin'; // import our mixin
+
 @mixin app-theme($theme) {
-  @include toolbar-demo($theme);
+  @include toolbar-demo($theme); // include our mixin in our overall app theme
 }
 ```
 
-### 4. Apply these changes to your main scss file: `styles.scss`
-Then all you need to do is change one more thing in your `styles.scss` file:
-**`styles.scss`**
+Now that you have seen an example, lets go to one of Material's pre-built themes that I said you could import.
+
+Comments are inline:
+
+**`~@angular/material2/core/theming/prebuilt/indigo-pink.scss`**
 ```scss
-@import 'themes.scss';
-@import 'app.variables.scss';
-/* Import our app-theme mixin */
-@import 'app-theme.mixin';
+// Import our theme mixin
+@import '../all-theme';
 
-/* Set the result of the light-theme function into our theme variable */
-$theme: light-theme($primary-color, $secondary-color, $accent-color, $success-color, $danger-color);
 
-/** 
- * Pass in our theme into the app-theme. All of the colors your uses in your light-theme will now be applied to all 
- * your components that you have in your theme. 
- */
-app-theme($theme)
+// Add the mixin that renders all of the core styles that are not theme-dependent.
+@include md-core();
+
+// Define the theme palettes
+$primary: md-palette($md-indigo);
+$accent:  md-palette($md-pink, A200, A100, A400);
+
+// Create your theme
+$theme: md-light-theme($primary, $accent);
+
+// Include all theme styles for the Material's components here, passing in our $theme.
+@include angular-material-theme($theme);
 ```
