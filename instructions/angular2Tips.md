@@ -1,9 +1,9 @@
 # <a name="tips"></a> Tips for Angular 2
 
 ## Table of Contents
-- [Beward of Outdated Tutorials for Angular 2](#outdated)
-- [Beward of Outdated Tutorials for Angular 2](#important)
-- [Beward of Outdated Tutorials for Angular 2](#services)
+- [Beware of Outdated Tutorials for Angular 2](#outdated)
+- [Most important things to know about Angular 2 (my bias)](#important)
+- [Angular 2 Services](#services)
 
 ## <a name="outdated"></a> Beware of Outdated Tutorials for Angular 2
 First off, remember that Angular 2 only came out in September 2016.
@@ -26,8 +26,9 @@ parent components within Angular 2.
 
 4. Get to know [Form Builder in Angular 2](https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html).
 I have found a lot of success with Form Builder. It brings a lot of structure to validating input from users.
+## <a name="services"></a> Angular 2 Services
 
-## <a name="services"></a> Services give your modular code for your backend server
+### Services give your modular code for your backend server
 As you might know, Services in Angular 2 is a singleton that
 allows you to store data on the client side so your Angular views
 can access and display that data. It can't replace your database
