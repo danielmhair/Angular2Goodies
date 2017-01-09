@@ -153,9 +153,9 @@ If you want to use this, add this link reference in your `index.html`.
 It is so much easier when you have a theme built out to use throughout your app. It can save you a lot of valuable
 time. In order to do this, you can do of one of two things:
 
-1. [Theming Tutorial](instructions/angular2Themes.md). Go through the tutorial about the import
+1. [Theming with SASS (`scss`) Tutorial](instructions/angular2Themes.md#sass-tutorial). Go through the tutorial about the import
 aspects of theming using SASS (SASS is explained).
-2. [Theming with Material 2](instructions/angular2Themes.md#theming-material-2). This will show you directly how to
+2. [Theming with Material 2](instructions/angular2Themes.md). This will show you directly how to
 style your app very quickly (but it can be confusing without explanations).
 
 ## Tips for Angular 2
